@@ -1,12 +1,14 @@
 require('dotenv').config();
 const app = require('./app');
 const { connectDb, closeDb } = require('./db');
+const { ensureSeed } = require('./seed');
 
 const PORT = process.env.PORT || 3000;
 
 async function startServer() {
   try {
     await connectDb();
+    await ensureSeed();
     const server = app.listen(PORT, () => {
       console.log(`===============================================`);
       console.log(`Microservicio de Productos ejecutándose`);
