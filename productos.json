@@ -1,0 +1,302 @@
+[
+  {
+    "id": "PRD001",
+    "nombre": "Smartphone Nova X1 128GB",
+    "descripcion": "Pantalla OLED de 6,5 pulgadas y cámara triple de 50 MP",
+    "categoriaId": "CAT02",
+    "marca": "Nova",
+    "precio": 450000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD002",
+    "nombre": "Smartphone Nova Lite 64GB",
+    "descripcion": "Pantalla LCD de 6,1 pulgadas y batería de 5000 mAh",
+    "categoriaId": "CAT02",
+    "marca": "Nova",
+    "precio": 280000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD003",
+    "nombre": "Notebook Kora 14\"",
+    "descripcion": "Procesador de 8 núcleos, 16 GB de RAM y SSD de 512 GB",
+    "categoriaId": "CAT03",
+    "marca": "Kora",
+    "precio": 890000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD004",
+    "nombre": "Notebook Kora Pro 16\"",
+    "descripcion": "Procesador de 12 núcleos, 32 GB de RAM y SSD de 1 TB",
+    "categoriaId": "CAT03",
+    "marca": "Kora",
+    "precio": 1350000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD005",
+    "nombre": "Auriculares Bluetooth Sonar",
+    "descripcion": "Cancelación de ruido y 30 horas de batería",
+    "categoriaId": "CAT01",
+    "marca": "Sonar",
+    "precio": 65000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD006",
+    "nombre": "Cafetera Express Brasa",
+    "descripcion": "Presión de 15 bares y vaporizador de leche",
+    "categoriaId": "CAT05",
+    "marca": "Brasa",
+    "precio": 120000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD007",
+    "nombre": "Licuadora Vortex 1200W",
+    "descripcion": "Jarra de vidrio de 1,5 litros y 5 velocidades",
+    "categoriaId": "CAT05",
+    "marca": "Vortex",
+    "precio": 54000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD008",
+    "nombre": "Zapatillas Running Pampa",
+    "descripcion": "Amortiguación ligera para asfalto",
+    "categoriaId": "CAT07",
+    "marca": "Pampa",
+    "precio": 98000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD009",
+    "nombre": "Zapatillas Trail Cordillera",
+    "descripcion": "Suela con tacos profundos e impermeables",
+    "categoriaId": "CAT07",
+    "marca": "Pampa",
+    "precio": 125000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD010",
+    "nombre": "Pelota de fútbol Estadio N5",
+    "descripcion": "Tamaño 5, cosida a máquina",
+    "categoriaId": "CAT06",
+    "marca": "Estadio",
+    "precio": 32000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD011",
+    "nombre": "Algoritmos en la práctica",
+    "descripcion": "Libro de programación y estructuras de datos",
+    "categoriaId": "CAT08",
+    "marca": "Editorial Sur",
+    "precio": 28000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD012",
+    "nombre": "Silla de escritorio Ergo",
+    "descripcion": "Respaldo lumbar ajustable y base de nylon",
+    "categoriaId": "CAT04",
+    "marca": "Ergo",
+    "precio": 185000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD013",
+    "nombre": "Smartphone Nova Pro 256GB",
+    "descripcion": "Pantalla OLED de 6,7 pulgadas, cámara de 108 MP y carga rápida",
+    "categoriaId": "CAT02",
+    "marca": "Nova",
+    "precio": 620000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD014",
+    "nombre": "Smartphone Aurora A5 128GB",
+    "descripcion": "Pantalla LCD de 6,3 pulgadas y batería de 4500 mAh",
+    "categoriaId": "CAT02",
+    "marca": "Aurora",
+    "precio": 330000,
+    "moneda": "ARS",
+    "activo": false
+  },
+  {
+    "id": "PRD015",
+    "nombre": "Notebook Atlas Air 13\"",
+    "descripcion": "Ultraliviana de 1,1 kg, 16 GB de RAM y SSD de 512 GB",
+    "categoriaId": "CAT03",
+    "marca": "Atlas",
+    "precio": 760000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD016",
+    "nombre": "Parlante Bluetooth Eco Beat",
+    "descripcion": "Resistente al agua, 12 horas de batería",
+    "categoriaId": "CAT09",
+    "marca": "Sonar",
+    "precio": 48000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD017",
+    "nombre": "Cargador rápido 65W Volt",
+    "descripcion": "Dos puertos USB-C, compatible con notebooks y celulares",
+    "categoriaId": "CAT09",
+    "marca": "Volt",
+    "precio": 22000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD018",
+    "nombre": "Mouse inalámbrico Kora Glide",
+    "descripcion": "Sensor óptico de 4000 DPI, batería de larga duración",
+    "categoriaId": "CAT09",
+    "marca": "Kora",
+    "precio": 18000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD019",
+    "nombre": "Teclado mecánico Kora Tactile",
+    "descripcion": "Switches táctiles con iluminación RGB",
+    "categoriaId": "CAT09",
+    "marca": "Kora",
+    "precio": 52000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD020",
+    "nombre": "Freidora de aire Brasa 5L",
+    "descripcion": "Cocción sin aceite, 8 programas",
+    "categoriaId": "CAT05",
+    "marca": "Brasa",
+    "precio": 135000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD021",
+    "nombre": "Pava eléctrica Vortex 1,7L",
+    "descripcion": "Corte automático y base giratoria",
+    "categoriaId": "CAT05",
+    "marca": "Vortex",
+    "precio": 32000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD022",
+    "nombre": "Set de ollas Casaviva 7 piezas",
+    "descripcion": "Aluminio antiadherente apto para todas las cocinas",
+    "categoriaId": "CAT05",
+    "marca": "Casaviva",
+    "precio": 89000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD023",
+    "nombre": "Escritorio regulable Ergo Lift",
+    "descripcion": "Altura eléctrica con memoria de posiciones",
+    "categoriaId": "CAT10",
+    "marca": "Ergo",
+    "precio": 340000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD024",
+    "nombre": "Lámpara LED de escritorio Lumen",
+    "descripcion": "Tres temperaturas de color y brazo articulado",
+    "categoriaId": "CAT10",
+    "marca": "Lumen",
+    "precio": 26000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD025",
+    "nombre": "Zapatillas urbanas Pampa Street",
+    "descripcion": "Suela de goma y capellada de cuero sintético",
+    "categoriaId": "CAT07",
+    "marca": "Pampa",
+    "precio": 85000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD026",
+    "nombre": "Remera técnica Estadio Dry",
+    "descripcion": "Tela de secado rápido con protección UV",
+    "categoriaId": "CAT11",
+    "marca": "Estadio",
+    "precio": 24000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD027",
+    "nombre": "Mochila deportiva Cordillera 30L",
+    "descripcion": "Compartimiento térmico y funda impermeable",
+    "categoriaId": "CAT11",
+    "marca": "Cordillera",
+    "precio": 58000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD028",
+    "nombre": "Bicicleta MTB rodado 29 Cordillera",
+    "descripcion": "Cuadro de aluminio, 21 cambios y frenos a disco",
+    "categoriaId": "CAT06",
+    "marca": "Cordillera",
+    "precio": 520000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD029",
+    "nombre": "Bases de datos sin misterio",
+    "descripcion": "Libro práctico de modelado, SQL y NoSQL",
+    "categoriaId": "CAT12",
+    "marca": "Editorial Sur",
+    "precio": 31000,
+    "moneda": "ARS",
+    "activo": true
+  },
+  {
+    "id": "PRD030",
+    "nombre": "Diseño de microservicios",
+    "descripcion": "Libro sobre arquitectura, integración y resiliencia",
+    "categoriaId": "CAT12",
+    "marca": "Editorial Sur",
+    "precio": 36000,
+    "moneda": "ARS",
+    "activo": true
+  }
+]

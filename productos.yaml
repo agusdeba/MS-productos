@@ -1,0 +1,264 @@
+openapi: 3.0.3
+info:
+  title: Microservicio de productos
+  version: 1.0.0
+  description: "**Colección:** `productos` — Catálogo de productos a la venta.\n\nContrato común a todos\
+    \ los microservicios del ejercicio.\n\n**Reglas generales**\n- El servicio es de **solo lectura**\
+    \ y expone siempre las mismas rutas: `GET /health`, `GET /items` y `GET /items/{id}`.\n- `GET /items`\
+    \ devuelve los elementos **ordenados por `id` ascendente**, con paginación `limit`/`offset`.\n  `total`\
+    \ es la cantidad de elementos que cumplen los filtros, sin considerar la paginación.\n- Los filtros\
+    \ se combinan con AND. Los filtros de texto comparan por igualdad exacta sin distinguir mayúsculas.\n\
+    - Un parámetro inválido (tipo, rango o valor fuera del enum) responde **400**. Un `id` inexistente\
+    \ responde **404**.\n- Los errores usan siempre el formato `{ \"error\": \"<codigo>\", \"message\"\
+    : \"<detalle>\" }`.\n- Los nombres de campos del documento coinciden con los del JSON de la semilla\
+    \ (campo `id` como clave primaria).\n- Fechas en ISO 8601 UTC (`date-time`) o `YYYY-MM-DD` (`date`).\n"
+  x-collection: productos
+  x-id-prefix: PRD
+servers:
+- url: http://localhost:3000
+  description: Local
+- url: https://TU-SERVICIO.onrender.com
+  description: Render (reemplazar por tu URL)
+tags:
+- name: Servicio
+  description: Estado del servicio
+- name: productos
+  description: Catálogo de productos a la venta.
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Estado del servicio
+      tags:
+      - Servicio
+      description: Debe responder 200 si el servicio y su base de datos están operativos. `collection`
+        debe coincidir con la colección que sirve este microservicio.
+      responses:
+        '200':
+          description: Servicio operativo.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /items:
+    get:
+      operationId: listItems
+      summary: Lista de productos
+      tags:
+      - productos
+      description: Devuelve una página de elementos de `productos` ordenados por `id`.
+      parameters:
+      - name: categoriaId
+        in: query
+        required: false
+        description: Filtra por categoría.
+        schema:
+          type: string
+          pattern: ^CAT[0-9]+$
+      - name: marca
+        in: query
+        required: false
+        description: Filtra por marca (coincidencia exacta, sin distinguir mayúsculas).
+        schema:
+          type: string
+      - name: precioMin
+        in: query
+        required: false
+        description: Precio mayor o igual a este valor.
+        schema:
+          type: number
+          minimum: 0
+      - name: precioMax
+        in: query
+        required: false
+        description: Precio menor o igual a este valor.
+        schema:
+          type: number
+          minimum: 0
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: Página de resultados.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /items/{id}:
+    get:
+      operationId: getItem
+      summary: Detalle de un elemento de productos
+      tags:
+      - productos
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Identificador del elemento (por ejemplo `PRD001`).
+        schema:
+          type: string
+      responses:
+        '200':
+          description: El elemento solicitado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Cantidad máxima de elementos a devolver.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Cantidad de elementos a saltear.
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+  responses:
+    BadRequest:
+      description: Parámetros inválidos.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error: bad_request
+            message: El parámetro limit debe estar entre 1 y 100.
+    NotFound:
+      description: No existe un elemento con ese id.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error: not_found
+            message: No existe PRD999.
+  schemas:
+    Item:
+      type: object
+      description: Catálogo de productos a la venta.
+      required:
+      - id
+      - nombre
+      - categoriaId
+      - marca
+      - precio
+      - moneda
+      - activo
+      properties:
+        id:
+          type: string
+          pattern: ^PRD[0-9]+$
+          description: Identificador único del recurso.
+          example: PRD001
+        nombre:
+          type: string
+          description: Nombre comercial.
+          example: Smartphone Nova X1 128GB
+        descripcion:
+          type: string
+          description: Descripción breve.
+        categoriaId:
+          type: string
+          pattern: ^CAT[0-9]+$
+          description: Categoría del producto (puede ser raíz o subcategoría).
+          example: CAT001
+        marca:
+          type: string
+          description: Marca.
+          example: Nova
+        precio:
+          type: number
+          description: Precio de lista actual.
+          minimum: 0
+          example: 450000
+        moneda:
+          type: string
+          enum:
+          - ARS
+          description: Moneda de los importes.
+        activo:
+          type: boolean
+          description: Indica si el producto está a la venta.
+      example:
+        id: PRD001
+        nombre: Smartphone Nova X1 128GB
+        descripcion: Pantalla OLED de 6,5 pulgadas y cámara triple de 50 MP
+        categoriaId: CAT02
+        marca: Nova
+        precio: 450000
+        moneda: ARS
+        activo: true
+    ItemList:
+      type: object
+      required:
+      - items
+      - total
+      - limit
+      - offset
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        total:
+          type: integer
+          minimum: 0
+          description: Cantidad total de elementos que cumplen los filtros.
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+        offset:
+          type: integer
+          minimum: 0
+    Health:
+      type: object
+      required:
+      - status
+      - service
+      - collection
+      properties:
+        status:
+          type: string
+          enum:
+          - ok
+        service:
+          type: string
+          description: Nombre del servicio (libre; por ejemplo el del grupo).
+          example: grupo-03-productos
+        collection:
+          type: string
+          enum:
+          - productos
+        version:
+          type: string
+          example: 1.0.0
+    Error:
+      type: object
+      required:
+      - error
+      - message
+      properties:
+        error:
+          type: string
+          enum:
+          - bad_request
+          - not_found
+        message:
+          type: string
