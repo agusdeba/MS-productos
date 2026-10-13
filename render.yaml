@@ -11,7 +11,7 @@ services:
       - key: MONGODB_URI
         sync: false
       - key: DB_NAME
-        value: productos_db
+        value: Productos
       - key: COLLECTION_NAME
         value: productos
       - key: SERVICE_NAME
