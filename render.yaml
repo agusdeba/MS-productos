@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: microservicio-productos
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: MONGODB_URI
+        sync: false
+      - key: DB_NAME
+        value: productos_db
+      - key: COLLECTION_NAME
+        value: productos
+      - key: SERVICE_NAME
+        value: grupo-03-productos
+      - key: VERSION
+        value: 1.0.0
